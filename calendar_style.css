@@ -153,6 +153,5 @@ thead th:nth-child(2) {
 @media (min-width:901px) { table { width: 80%; } th, td { padding: 8px 10px; font-size: 12px; } }
 
 /* ===== WEEK COLORING ===== */
-.week-15 td,.week-14 td,.week-13 td,.week-12 td { background-color:#808080;color:#000; }
-.week-11 td { background-color:#00ff00;color:#000; }
-.week-10 td, .week-09 td, .week-08 td, .week-07 td, .week-06 td, .week-05 td, .week-04 td, .week-03 td    { background-color:#ff6000;color:#000; }
+.week-15 td,.week-14 td,.week-13 { background-color:#808080;color:#000; }
+ 

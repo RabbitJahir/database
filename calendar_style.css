@@ -1,0 +1,158 @@
+/* ================= BODY & SKY ================= */
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  background: var(--sky-gradient, linear-gradient(to bottom, #87ceeb, #f0f8ff));
+  transition: background 1s linear;
+}
+
+
+/* ================= HEADINGS ================= */
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ===== TABLE WRAPPER ===== */
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 80vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===== BASE TABLE STYLE ===== */
+table {
+  table-layout: fixed;
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  color: #000;
+  font-family: Arial, sans-serif;
+  background-color: #f3edb0;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+th, td {
+  padding: 12px 10px;
+  font-size: 12px;
+  border: 1px solid #000080;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 150px;
+}
+
+/* ===== WEEK HEADER ===== */
+.week-header {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-weight: bold;
+  border-top: 1px solid #000080;
+  border-bottom: 1px solid #000080;
+  border-left: 1px solid #000080 !important;
+  border-right: 1px solid #000080 !important;
+}
+
+.week-header td {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 08px;
+  border: none !important;
+}
+
+.week-header td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.week-header .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+  color: black;
+  font-size: 16px;
+  user-select: none;
+}
+
+.week-header.open .arrow {
+  transform: rotate(180deg);
+}
+
+.week-title { vertical-align: middle; }
+
+/* ===== STICKY HEADERS ===== */
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #99ccff;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  -webkit-sticky: top;
+}
+
+.day-row td:nth-child(2),
+thead th:nth-child(2) {
+  position: sticky;
+  left: 80px;
+  background-color: #99ccff;
+  font-weight: bold;
+  z-index: 4;
+}
+
+.day-row:hover { background-color: #e6f2ff; transition: background 0.2s ease-in-out; }
+
+/* Popup styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #007BFF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 100;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.popup h3 { margin-top: 0; color: #007BFF; }
+.popup button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup button:hover { background: #0056b3; }
+
+.overlay {
+  display: none;
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.3);
+  z-index: 50;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  table { min-width: 750px; }
+  th, td { padding: 8px 10px; font-size: 12px; max-width: 120px; white-space: normal; }
+  .week-header td { font-size: 14px; }
+  .day-row:hover { background-color: #f0f9ff; }
+}
+@media (min-width:601px) and (max-width:900px) { table { width: 95%; } th, td { padding: 10px 12px; font-size: 13px; } }
+@media (min-width:901px) { table { width: 80%; } th, td { padding: 8px 10px; font-size: 12px; } }
+
+/* ===== WEEK COLORING ===== */
+.week-15 td,.week-14 td,.week-13 td,.week-12 td { background-color:#808080;color:#000; }
+.week-11 td { background-color:#00ff00;color:#000; }
+.week-10 td, .week-09 td, .week-08 td, .week-07 td, .week-06 td, .week-05 td, .week-04 td, .week-03 td    { background-color:#ff6000;color:#000; }
